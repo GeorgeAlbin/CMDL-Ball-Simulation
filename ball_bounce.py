@@ -74,6 +74,32 @@ def ball_generator(ball_count): #Initilizes ball_container with desired number o
 
     return ball_gen_container
 
+def start_screen():
+    user_setting_options = ''
+    clear()
+
+    while user_setting_options != 's':
+        user_setting_options = input("Options:\n"
+                                    "\t's'  : Start\n"
+                                    "\t'w'  : Modify window settings\n"
+                                    "\t'b'  : Modify ball count\n"
+                                    "\t'f'  : Modify frame updates per second\n"
+                                    "\t'a'  : Modify all settings\n")
+
+        if user_setting_options == 's': break
+
+        if user_setting_options == 'w' or 'a':
+            frame_width == int(input("\nEnter frame width: "))
+            frame_width == int(input("Enter frame height: "))
+
+        if user_setting_options == 'b' or 'a':
+            number_of_balls == int(input("\nEnter number of balls: "))
+
+        if user_setting_options == 'f' or 'a':
+            target_fps = 1/int(input("\nEnter target Frame updates per second: "))
+
+        user_setting_options = input("\nInput 's' to save and continue or enter any key to modify settings again: ")
+        
 frame_width, frame_height = 21, 25
 frame = []
 empty_tile = '   '
@@ -82,6 +108,7 @@ ball_container = []
 fps = 0.0
 frame_updates = 0
 run_time = 1
+target_fps = 0 #Default is Max
 
 def main():
     global frame_width
@@ -89,12 +116,9 @@ def main():
     global number_of_balls
     global ball_container
 
-    if input("Input: 'a' to modify ball count and frame size: ") == 'a':
-        frame_width = int(input("Enter frame width: "))
-        frame_width = int(input("Enter frame height: "))
-        number_of_balls = int(input("Enter number of balls: "))
-
     ball_container = ball_generator(number_of_balls)
+
+    start_screen()
 
     while True:
         clear()
