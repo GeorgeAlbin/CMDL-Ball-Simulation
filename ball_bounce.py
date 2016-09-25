@@ -53,7 +53,6 @@ def valid_move(ball, test_position):
 
 def update_frame():
     global frame
-
     frame = [[empty_tile for tile in range(frame_width)] for row in range(frame_height)]
 
     for ball in ball_container:
@@ -99,7 +98,7 @@ def start_screen():
             target_fps = 1/int(input("\nEnter target Frame updates per second: "))
 
         user_setting_options = input("\nInput 's' to save and continue or enter any key to modify settings again: ")
-        
+
 frame_width, frame_height = 21, 25
 frame = []
 empty_tile = '   '
