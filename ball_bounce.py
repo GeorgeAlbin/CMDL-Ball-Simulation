@@ -74,6 +74,11 @@ def ball_generator(ball_count): #Initilizes ball_container with desired number o
     return ball_gen_container
 
 def start_screen():
+    global frame_width
+    global frame_height
+    global number_of_balls
+    global target_fps
+
     user_setting_options = ''
     clear()
 
@@ -110,9 +115,6 @@ run_time = 1
 target_fps = 0 #Default is Max
 
 def main():
-    global frame_width
-    global frame_height
-    global number_of_balls
     global ball_container
 
     ball_container = ball_generator(number_of_balls)
