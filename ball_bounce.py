@@ -125,7 +125,7 @@ def main():
         update_frame()
         update_ball_position()
         display_fps()
-        time.sleep(0)
+        time.sleep(target_fps)
 
 if __name__ == "__main__":
     main()
